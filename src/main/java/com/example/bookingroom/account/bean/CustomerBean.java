@@ -5,11 +5,20 @@ public class CustomerBean {
     private int id;
     private String fullName;
     private String password;
+    private String passwordHash;
     private String gmail;
     private String address;
     private String gender;
     private String avatar;
     private String DOB;
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
 
     public int getId() {
         return id;

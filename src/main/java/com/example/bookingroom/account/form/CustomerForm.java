@@ -1,14 +1,25 @@
 package com.example.bookingroom.account.form;
 
+import java.util.Date;
+
 public class CustomerForm {
     private int id;
     private String fullName;
     private String password;
+    private String passwordHash;
     private String gmail;
     private String address;
     private String gender;
     private String avatar;
-    private String DOB;
+    private Date dob;
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
 
     public int getId() {
         return id;
@@ -66,11 +77,11 @@ public class CustomerForm {
         this.avatar = avatar;
     }
 
-    public String getDOB() {
-        return DOB;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 }
