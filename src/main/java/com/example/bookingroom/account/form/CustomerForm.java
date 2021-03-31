@@ -12,6 +12,7 @@ public class CustomerForm {
     private String gender;
     private String avatar;
     private Date dob;
+//    private String
 
     public String getPasswordHash() {
         return passwordHash;

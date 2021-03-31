@@ -29,7 +29,7 @@ public class CustomerBO {
     private String avatar;
 
     @Column(name = "date_of_birth")
-    private Date DOB;
+    private Date dob;
     @Transient
     private String password;
 
@@ -52,7 +52,7 @@ public class CustomerBO {
         this.address = address;
         this.gender = gender;
         this.avatar = avatar;
-        this.DOB = DOB;
+        this.dob = DOB;
     }
 
     public int getId() {
@@ -111,11 +111,11 @@ public class CustomerBO {
         this.avatar = avatar;
     }
 
-    public Date getDOB() {
-        return DOB;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 }
