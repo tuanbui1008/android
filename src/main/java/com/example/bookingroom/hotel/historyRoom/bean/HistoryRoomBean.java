@@ -1,6 +1,8 @@
 package com.example.bookingroom.hotel.historyRoom.bean;
 
 
+import java.util.Date;
+
 public class HistoryRoomBean {
     private int id;
     private int idBookRoom;

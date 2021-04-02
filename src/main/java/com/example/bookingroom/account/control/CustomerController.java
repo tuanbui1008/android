@@ -37,7 +37,7 @@ public class CustomerController {
     Response confirmGmail(@RequestBody CustomerForm form) {
         boolean confirm = customerDAO.existsByGmail(form.getGmail());
         if (confirm) {
-            return Response.warning(Constants.RESPONSE_CODE.WARNING);
+            return Response.confirm(Constants.RESPONSE_CODE.CONFIRM);
         } else {
             return Response.success(Constants.RESPONSE_CODE.SUCCESS);
         }

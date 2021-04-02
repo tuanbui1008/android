@@ -13,6 +13,9 @@ public class BookRoomBO {
     @Column(name = "id_customer")
     private int idCustomer;
 
+    @Column(name = "id_room")
+    private int idRoom;
+
     @Column(name = "created_date")
     private Date createdDate;
 
@@ -21,6 +24,37 @@ public class BookRoomBO {
 
     @Column(name = "date_go")
     private Date dateGo;
+
+    @Column(name = "amount_person")
+    private int amountPerson;
+
+    @Column(name = "amount_room")
+    private int amountRoom;
+
+
+    public int getIdRoom() {
+        return idRoom;
+    }
+
+    public void setIdRoom(int idRoom) {
+        this.idRoom = idRoom;
+    }
+
+    public int getAmountPerson() {
+        return amountPerson;
+    }
+
+    public void setAmountPerson(int amountPerson) {
+        this.amountPerson = amountPerson;
+    }
+
+    public int getAmountRoom() {
+        return amountRoom;
+    }
+
+    public void setAmountRoom(int amountRoom) {
+        this.amountRoom = amountRoom;
+    }
 
     public int getId() {
         return id;

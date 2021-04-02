@@ -9,4 +9,6 @@ public interface CustomerDAO extends CrudRepository<CustomerBO, Integer> {
     boolean existsByGmailAndPasswordHash(String gmail, String password);
 
     CustomerBO getCustomerBOByGmail(String gmail);
+
+
 }

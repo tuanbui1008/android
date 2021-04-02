@@ -1,15 +1,10 @@
 package com.example.bookingroom.hotel.category.bean;
 
-public class CategoryBean {
+public class CategoryBean{
     private int id;
     private String name;
-
-    public CategoryBean() {
-    }
-
-    public CategoryBean(String name) {
-        this.name = name;
-    }
+    private String image;
+    private Double price;
 
     public int getId() {
         return id;
@@ -26,4 +21,21 @@ public class CategoryBean {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
 }

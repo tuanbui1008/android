@@ -1,6 +1,8 @@
 package com.example.bookingroom.hotel.historyRoom.form;
 
 
+import java.util.Date;
+
 public class HistoryRoomForm {
     private int id;
     private int idBookRoom;

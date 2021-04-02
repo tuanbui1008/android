@@ -19,6 +19,7 @@ public class Constants {
 
     public static class RESPONSE_CODE {
         public static final String SUCCESS = "success";
+        public static final String CONFIRM = "confirm";
         public static final String DELETE_SUCCESS = "deleteSuccess";
         public static final String UPDATE_STATUS_SUCCESS = "updateStatusSuccess";
         public static final String UPDATE_SUCCESS = "updateSuccess";

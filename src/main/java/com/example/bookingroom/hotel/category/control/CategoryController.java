@@ -5,15 +5,15 @@ import com.example.bookingroom.common.Response;
 import com.example.bookingroom.hotel.category.bean.CategoryBean;
 import com.example.bookingroom.hotel.category.bo.CategoryBO;
 import com.example.bookingroom.hotel.category.dao.CategoryDAO;
+import com.example.bookingroom.hotel.category.form.CategoryForm;
+import com.example.bookingroom.hotel.category.service.CategoryService;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,11 @@ public class CategoryController {
     private final Logger logger = LoggerFactory.getLogger(CategoryController.class);
     @Autowired
     private CategoryDAO categoryDAO;
-    
+
+    @Autowired
+    private CategoryService service;
+
+
     @Transactional
     @GetMapping("/fake-data")
     public @ResponseBody
@@ -52,5 +56,11 @@ public class CategoryController {
             lstBean.add(bean);
         });
         return Response.success().withData(lstBean);
+    }
+
+    @PostMapping("/getByIdHotel")
+    public @ResponseBody Response getCategoryByIdHotel(@RequestBody CategoryForm form){
+        List<CategoryBean> lstResult = service.getCategoryBOByIdHotel(form.getIdHotel());
+        return Response.success(Constants.RESPONSE_CODE.SUCCESS).withData(lstResult);
     }
 }

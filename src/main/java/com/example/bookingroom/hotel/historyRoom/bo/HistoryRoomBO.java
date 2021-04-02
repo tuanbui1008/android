@@ -1,6 +1,7 @@
 package com.example.bookingroom.hotel.historyRoom.bo;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "dbo_history_room")
 public class HistoryRoomBO {

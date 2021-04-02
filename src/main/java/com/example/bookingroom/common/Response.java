@@ -113,6 +113,10 @@ public class Response {
         return new Response(Constants.RESPONSE_TYPE.ERROR, code);
     }
 
+    public static Response error(String code, String message) {
+        return new Response(Constants.RESPONSE_TYPE.ERROR, code, message);
+    }
+
     public static Response warning(String code) {
         return new Response(Constants.RESPONSE_TYPE.WARNING, code);
     }
@@ -123,6 +127,10 @@ public class Response {
 
     public static Response confirm(String code, String callback, Object data) {
         return new Response(Constants.RESPONSE_TYPE.CONFIRM, code, callback, data);
+    }
+
+    public static Response confirm(String code) {
+        return new Response(Constants.RESPONSE_TYPE.CONFIRM, code);
     }
 
     public static Response confirm(String code, String callback) {
