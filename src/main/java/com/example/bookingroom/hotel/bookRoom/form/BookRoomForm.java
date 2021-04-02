@@ -12,6 +12,15 @@ public class BookRoomForm {
     private Date dateGo;
     private int amountPerson;
     private int amountRoom;
+    private Double price;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public int getAmountRoom() {
         return amountRoom;

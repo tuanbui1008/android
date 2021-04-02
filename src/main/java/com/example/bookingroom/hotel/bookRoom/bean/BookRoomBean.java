@@ -12,6 +12,51 @@ public class BookRoomBean {
     private Date dateGo;
     private int amountPerson;
     private int amountRoom;
+    private Double price;
+    private String nameHotel;
+    private String address;
+    private String roomCode;
+    private String category;
+
+    public String getNameHotel() {
+        return nameHotel;
+    }
+
+    public void setNameHotel(String nameHotel) {
+        this.nameHotel = nameHotel;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getRoomCode() {
+        return roomCode;
+    }
+
+    public void setRoomCode(String roomCode) {
+        this.roomCode = roomCode;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public int getIdRoom() {
         return idRoom;

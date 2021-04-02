@@ -31,6 +31,16 @@ public class BookRoomBO {
     @Column(name = "amount_room")
     private int amountRoom;
 
+    @Column(name = "price")
+    private Double price;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public int getIdRoom() {
         return idRoom;

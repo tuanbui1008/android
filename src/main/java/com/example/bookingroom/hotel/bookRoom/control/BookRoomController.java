@@ -2,6 +2,7 @@ package com.example.bookingroom.hotel.bookRoom.control;
 
 import com.example.bookingroom.common.Constants;
 import com.example.bookingroom.common.Response;
+import com.example.bookingroom.hotel.bookRoom.bean.BookRoomBean;
 import com.example.bookingroom.hotel.bookRoom.bo.BookRoomBO;
 import com.example.bookingroom.hotel.bookRoom.dao.BookRoomDAO;
 import com.example.bookingroom.hotel.bookRoom.form.BookRoomForm;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("api/book-room")
 public class BookRoomController {
@@ -30,16 +33,23 @@ public class BookRoomController {
 
     @PostMapping("/add")
     public @ResponseBody
-    Response addNew(@RequestBody BookRoomForm form){
+    Response addNew(@RequestBody BookRoomForm form) {
         ModelMapper mapper = new ModelMapper();
-        BookRoomBO bo = mapper.map(form,BookRoomBO.class);
+        BookRoomBO bo = mapper.map(form, BookRoomBO.class);
         try {
             bookRoomDAO.save(bo);
         } catch (Exception e) {
-           logger.error(e.getMessage());
-           return Response.error(Constants.RESPONSE_CODE.ERROR);
+            logger.error(e.getMessage());
+            return Response.error(Constants.RESPONSE_CODE.ERROR);
         }
         return Response.success(Constants.RESPONSE_CODE.SUCCESS);
+    }
+
+    @PostMapping("/getData")
+    public @ResponseBody
+    Response getDataByIdCustomer(@RequestBody BookRoomForm form) {
+        List<BookRoomBean> lst = bookRoomService.getLstBookRoomByIdCustomer(form.getIdCustomer());
+        return Response.success(Constants.RESPONSE_CODE.SUCCESS).withData(lst);
     }
 
 }
